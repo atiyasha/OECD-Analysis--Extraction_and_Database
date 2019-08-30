@@ -14,6 +14,6 @@ Code to extract data from OECD API, parse files, and create a relational databas
 * Use Gender equality in entrepreneurship (GENDER_ENT1)
   * https://www.oecd-ilibrary.org/social-issues-migration-health/data/gender-equality/gender-equality-in-entrepreneurship_data-00723-en
   * https://stats.oecd.org/viewhtml.aspx?datasetcode=GENDER_ENT1&lang=en
-* Read JSON data from OECD Gender equality in entrepreneurship (GENDER_ENT1) API
-  * https://stats.oecd.org/SDMX-JSON/data/GENDER_ENT1
+  * Read JSON data from OECD Gender equality in entrepreneurship (GENDER_ENT1) API
+    * https://stats.oecd.org/SDMX-JSON/data/GENDER_ENT1
 * Load JSON data into MySQL database using Python
