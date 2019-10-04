@@ -32,7 +32,26 @@ for observation in oecd_json["structure"]["dimensions"]["observation"]:
     for value in observation["values"]:
         structure_dimension_observation.append(int(value["id"]))
 
+# attribute description
+# investigate ternary operator
+structure_attributes_series = []
+for series in oecd_json["structure"]["attributes"]["series"]:
+    attribute_info = {}
+    if series["name"] is not None:
+        attribute_info["code"] = series["name"]
+    else:
+        attribute_info["code"] = None
 
+    for value in series["values"]:
+        if series["name"] is not None:
+            attribute_info["value"] = value["name"]
+        else:
+            value["name"] = None
+
+    structure_attributes_series.append(attribute_info)
+
+for info in structure_attributes_series:
+    print(str(info))
 print(str(structure_dimension_observation))
 print(str(structure_dimension_series[0]))
 print(str(structure_dimension_series[1]))
