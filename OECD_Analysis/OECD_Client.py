@@ -48,7 +48,7 @@ for series in oecd_json["structure"]["attributes"]["series"]:
         else:
             value["name"] = None
 
-    structure_attributes_series.append(attribute_info)
+structure_attributes_series.append(attribute_info)
 
 for info in structure_attributes_series:
     print(str(info))
@@ -59,7 +59,7 @@ print(str(structure_dimension_series[2]))
 print(str(structure_dimension_series[3]))
 
 
-# store all series keys
+# Reading actual data
 series_position = []
 for data_set in oecd_json["dataSets"]:
     series = data_set["series"]
@@ -70,7 +70,15 @@ for data_set in oecd_json["dataSets"]:
         indicator_index = int(series_key_split_arr[1])
         gender_index = int(series_key_split_arr[2])
         age_index = int(series_key_split_arr[3])
-        #print(structure_dimension_series[0][country_index]["name"] + ", " + structure_dimension_series[1][indicator_index]["name"] + ", " + structure_dimension_series[2][gender_index]["name"] + ", " + structure_dimension_series[3][age_index]["name"])
+        print(structure_dimension_series[0][country_index]["name"] + ", " + structure_dimension_series[1][indicator_index]["name"] + ", " + structure_dimension_series[2][gender_index]["name"] + ", " + structure_dimension_series[3][age_index]["name"])
+
+        observations = series[series_key]["observations"]
+        for observation_key in observations.keys():
+            year = structure_dimension_observation[int(observation_key)]
+            statistic = observations[observation_key][0]
+            print(str(year) + " " + str(statistic))
+
+
 
 
 
