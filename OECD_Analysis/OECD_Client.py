@@ -59,7 +59,7 @@ print(str(structure_dimension_series[2]))
 print(str(structure_dimension_series[3]))
 
 
-# Reading actual data
+# Reading line item data
 series_position = []
 for data_set in oecd_json["dataSets"]:
     series = data_set["series"]
